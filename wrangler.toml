@@ -1,0 +1,21 @@
+name = "mailgun-contact-worker"
+main = "src/index.ts"
+compatibility_date = "2023-01-04"
+
+kv_namespaces = [
+    { binding = "VARS", id = "", preview_id = "" }
+]
+
+[env.dev]
+name = "mailgun-contact-worker--dev"
+kv_namespaces = [
+    { binding = "VARS", id = "" }
+]
+
+[env.production]
+name = "mailgun-contact-worker--prod"
+route = {pattern = "www.mywebsite.com/contact-submit", zone_name = "mywebsite.com"}
+kv_namespaces = [
+    { binding = "VARS", id = "" }
+]
+
